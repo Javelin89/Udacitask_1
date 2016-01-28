@@ -39,3 +39,5 @@ tasklist.set_title("Neuer Name")
 
 # Print the list
 tasklist.print_list
+
+tasklist.print_to_file
