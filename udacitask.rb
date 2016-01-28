@@ -1,8 +1,10 @@
 require_relative 'todolist.rb'
 
 # Creates a new todo list
+TodoList.new("New_tasks")
 
 # Add four new items
+
 
 # Print the list
 
