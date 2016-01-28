@@ -7,8 +7,8 @@ class TodoList
 
     attr_reader :title, :items
 
-    def name_list(name)
-    	@title = name
+    def set_title(title)
+    	@title = title
     end
 
     def add_item(new_item)
@@ -18,6 +18,26 @@ class TodoList
 
     def remove_item(item_id)
     	@items.delete_at(item_id)
+    end
+
+    def print_list
+    	print_title
+    	puts
+    	print_items
+    end
+
+    def print_title
+    	puts @title
+    end
+
+    def print_items
+    	@items.each do |item|
+    		item.print_item
+    	end
+    end
+
+    def change_item_status(item_id)
+    	@items.at(item_id).change_status
     end
 end
 
@@ -36,4 +56,9 @@ class Item
 	def change_status
 			@completed_status = !@completed_status
 	end
+
+	def print_item
+		puts "#{@description} Status: #{@completed_status.to_s}"
+	end
+
 end
